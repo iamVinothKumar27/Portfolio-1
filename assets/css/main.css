@@ -257,13 +257,18 @@ h6 {
   }
 }
 
+
 .navmenu a:hover,
 .navmenu .active,
 .navmenu .active:focus,
 .navmenu li:hover>a {
   color: var(--contrast-color);
-  background: var(--nav-hover-color);
+  background: var(--nav-hover-color); 
 }
+.navmenu a.wide-pill span {
+  font-size: 13px; /* Adjust this value as needed */
+}
+
 
 .navmenu a:hover,
 .navmenu li:hover>a {
