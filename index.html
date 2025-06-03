@@ -472,35 +472,52 @@
         </div>
 
         <!-- Buttons -->
-        <div class="col-md-12 text-center mt-4">
-          <a href="assets/Vinoth Kumar T S - Resume.pdf" download class="resume-btn">
-            Download Resume
-          </a>
-          <button id="viewResumeBtn" class="resume-btn">
-            View Resume
-          </button>
-        </div>
+<!-- Buttons -->
+<div class="col-md-12 text-center mt-4">
+  <a href="assets/Vinoth Kumar T S -Resume.pdf" download class="resume-btn">Download Resume</a>
+  <button id="viewResumeBtn" class="resume-btn">View Resume</button>
+</div>
 
-        <!-- Resume PDF Viewer -->
-        <div id="resumeFrame" style="display:none; margin-top: 20px;">
-          <iframe src="assets/Vinoth Kumar T S - Resume.pdf"
-            style="width:100%; height:500px; border: none; background-color: #f4f4f4;"></iframe>
-        </div>
-      </section>
+<!-- Resume Viewer -->
+<div id="resumeFrame" class="resume-container">
+  <object data="assets/Vinoth Kumar T S - Resume.pdf"
+          type="application/pdf"
+          width="850px"
+          height="1100px"
+          style="border: none; background-color: white;">
+    <p>Your browser does not support PDFs.
+      <a href="assets/Vinoth Kumar T S - Resume.pdf">Download PDF</a>.
+    </p>
+  </object>
+</div>
 
-      <!-- Script to Toggle View Resume -->
-      <script>
-        document.getElementById('viewResumeBtn').addEventListener('click', function () {
-          var resumeFrame = document.getElementById('resumeFrame');
-          if (resumeFrame.style.display === 'none') {
-            resumeFrame.style.display = 'block';
-            this.textContent = 'Hide Resume';
-          } else {
-            resumeFrame.style.display = 'none';
-            this.textContent = 'View Resume';
-          }
-        });
-      </script>
+<!-- Styles -->
+<style>
+  .resume-container {
+    display: none;
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .resume-container.active {
+    display: flex;
+  }
+</style>
+
+<!-- Script -->
+<script>
+  const viewBtn = document.getElementById('viewResumeBtn');
+  const resumeFrame = document.getElementById('resumeFrame');
+
+  viewBtn.addEventListener('click', function () {
+    const isVisible = resumeFrame.classList.toggle('active');
+    viewBtn.textContent = isVisible ? 'Hide Resume' : 'View Resume';
+  });
+</script>
+
+
+
+
 
       <!-- Portfolio Section -->
       <section id="projects" class="portfolio section light-background">
